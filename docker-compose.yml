@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  eureka-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/kaustack/eureka-server:latest
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    restart: unless-stopped
